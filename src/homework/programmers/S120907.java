@@ -25,10 +25,10 @@ public class S120907 {
             int y = Integer.parseInt(arr[2]);
             int z = Integer.parseInt(arr[4]);
             // 연산자는 배열의 1번째이므로 변수에 저장하기 (3번째인 = 는 필요없음)
-            String operator = arr[1];
+//            String operator = arr[1];
 
             int result = 0;
-            if (operator.equals("+")) {
+            if (arr[i].equals("+")) {
                 result = x + y;
             }
             else {

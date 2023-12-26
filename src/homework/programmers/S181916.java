@@ -5,10 +5,9 @@ public class S181916 {
         int a, b, c, d;
         System.out.println(solution(2, 2, 5, 6));
     }
-    //  Todo: 입출력 예를 한 개씩
-    //
 
     public static int solution(int a, int b, int c, int d) {
+        int[] dice = {a, b, c, d};
         int score = 0;
         int p, q = 0;
 
@@ -26,7 +25,6 @@ public class S181916 {
                 // 숫자 한 개만 다른 숫자 찾아내기 함수 만들어서 사용
                 q = findDifferentNumber(a, b, c, d);
                 score = (int) (Math.pow(10 * a + q, 2));
-
             }
             // c3
             else if ((a == b && c == d) || (a == c && b == d) || (a == d && b == c)) {
@@ -46,7 +44,7 @@ public class S181916 {
                 } else if (a == c) {
                     score = b * d;
                 } else {
-                    score = b * c;
+                    score = a * d;
                 }
             }
             // c5: 두 값 중 최솟값 비교하기 메서드 사용하여 네 가지 값 전부 비교하기
