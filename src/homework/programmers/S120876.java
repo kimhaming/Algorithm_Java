@@ -13,39 +13,41 @@ public class S120876 {
         System.out.println(solution(lines));
     }
 
+    // int형 이차원 배열을 매개변수로 받는 함수 solution 만든다.
     public static int solution(int[][] lines) {
+       // 중복, 순서 x Set 인터페이스를 구현한 HashSet 생성하여 나타나는 선분의 위치 담는다.
         Set<Integer> positions = new HashSet<>();
 
-        // 2차원 배열의 요소를 1차원 배열 변수 line에 담아서 하나씩 실행 반복
+        // 이차원 배열을 순회하며 각 요소를 일차원 배열 변수에 담는다.
         for (int[] line : lines) {
-            // 1차원 배열 line의 첫번째 요소 (start 좌표)에 +100 하여 초기화, 두번째 요소 (end 좌표) +100 미만까지 반복해야
-            // 해당 좌표를 마지막으로 지나는 선분의 인덱스 범위가 된다.
-            for (int j = line[0] + 100; j < line[1] + 100; j++) {
-               // 해당 위치에 대한 숫자를 중복없이 저장한다.
+            // 일차원 배열의 첫번째 요소 +100 으로 초기화, 두번째 요소 +100 미만이 될 때까지 순회한다.
+            for (int j = (line[0] + 100); j < (line[1] + 100); j++) {
+                // 숫자형 집합 positions에 범위에 해당하는 위치를 중복없이 저장한다.
                 positions.add(j);
             }
         }
 
-        // 해당 위치에 대한 숫자를 저장한 set에 담긴 숫자 pos를 하나씩 돌면서
+        // pos 하나에 대한 순회가 끝났을 때 count가 2이상인지 확인해서 참이면 중복 선의 개수를 담는 변수 필요하다.
         int intersections = 0;
+        // 저장한 위치 하나씩
         for (int pos : positions) {
             int count = 0;
+            // 일차원 배열 좌표를 하나씩 순회하며
             for (int[] line : lines) {
-                // 현재 돌고 있는 1차원 배열의 첫번째 요소 (시작점) +100 이상 두번째 요소 (끝점) 미만 범위에
-                // pos가 포함된다면
-                // count++ 하고나면, 다시 다음 일차원 배열을 순회해서 현재 if문이 참이라면 또 count++ 한다.
+                // 일차원 배열의 요소인 특정 선분 범위 사이에 특정 위치가 속한다면,
                 if (line[0] + 100 <= pos && pos < line[1] + 100) {
-                    // count를 증가시킨다.
+                    // 세어준다.
                     count++;
                 }
             }
-            // 특정 pos일 때에 count가 1 초과라면, 해당 선분 자리에(인덱스에) 2번 이상 등장했다는 것이므로
+
+            // pos 하나에 대한 순회가 끝나고, 새로운 pos로 넘어가서 count가 리셋되기 전에, 같은 pos에 대한 count가 2이상이라면
             if (count > 1) {
-                // 겹치는 길이 1 증가
+                // 겹치는 선의 개수를 뜻하는 변수의 값을 1 증가시킨다.
                 intersections++;
             }
         }
-
+        // 모든 pos에 대한 순회가 끝나면 intersection을 리턴한다.
         return intersections;
     }
 }
