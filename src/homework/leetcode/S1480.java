@@ -1,6 +1,5 @@
-package leetcode;
+package homework.leetcode;
 
-import java.lang.reflect.Array;
 import java.util.Arrays;
 
 public class S1480 {

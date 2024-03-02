@@ -1,8 +1,8 @@
-package leetcode;
+package homework.leetcode;
 
 public class S0383 {
     public static void main(String[] args) {
-        System.out.println(canConstruct("aab", "baabab"));
+        System.out.println(canConstruct("aa", "ab"));
     }
 
     public static boolean canConstruct(String ransomNote, String magazine) {

@@ -1,4 +1,4 @@
-package leetcode;
+package homework.leetcode;
 
 public class S1342 {
     public static void main(String[] args) {

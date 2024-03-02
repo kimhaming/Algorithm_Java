@@ -1,6 +1,4 @@
-package leetcode;
-
-import java.util.Arrays;
+package homework.leetcode;
 
 public class S1309 {
     public static void main(String[] args) {

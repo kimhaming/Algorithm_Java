@@ -1,4 +1,4 @@
-package leetcode.strings;
+package homework.leetcode.strings;
 
 public class Reverse_Integer {
     public static void main(String[] args) {
