@@ -1,11 +1,14 @@
 package homework.leetcode.arrays101;
 
-public class MaxConsecutiveOnes {
+public class S0485 {
+    // https://leetcode.com/problems/max-consecutive-ones/description/
+
     public static void main(String[] args) {
         int[] nums = {1, 1, 1, 1, 0};
         System.out.println(findMaxConsecutiveOnes(nums));
         // Output -> 2
     }
+
 
     public static int findMaxConsecutiveOnes(int[] nums) {
         // 결론적으로 리턴할 정답 (문제에서 바라는 결과값)

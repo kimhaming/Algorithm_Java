@@ -1,6 +1,8 @@
 package homework.leetcode;
 
 public class S1342 {
+    // https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/description/
+
     public static void main(String[] args) {
         System.out.println(numberOfSteps(14));
     }

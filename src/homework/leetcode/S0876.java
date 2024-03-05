@@ -1,6 +1,8 @@
 package homework.leetcode;
 
 public class S0876 {
+    // https://leetcode.com/problems/middle-of-the-linked-list/description/
+
     public static void main(String[] args) {
         ListNode head1 = new ListNode(1);
         ListNode head2 = new ListNode(2);

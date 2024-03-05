@@ -1,6 +1,8 @@
 package homework.leetcode;
 
 public class S0383 {
+    // https://leetcode.com/problems/ransom-note/description/
+
     public static void main(String[] args) {
         System.out.println(canConstruct("aa", "ab"));
     }

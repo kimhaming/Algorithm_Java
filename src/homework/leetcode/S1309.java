@@ -1,6 +1,7 @@
 package homework.leetcode;
 
 public class S1309 {
+    // https://leetcode.com/problems/number-of-steps-to-reduce-a-number-to-zero/description/
     public static void main(String[] args) {
         System.out.println(freqAlphabets("10#11#12"));
         // 출력: "jkab"

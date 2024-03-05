@@ -3,6 +3,8 @@ package homework.leetcode;
 import java.util.Arrays;
 
 public class S1480 {
+    // https://leetcode.com/problems/running-sum-of-1d-array/description/
+
     public static void main(String[] args) {
         int[] nums = {1, 2, 3, 4};
         System.out.println(Arrays.toString(runningSum(nums)));

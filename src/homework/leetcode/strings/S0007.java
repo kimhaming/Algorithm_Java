@@ -1,6 +1,6 @@
 package homework.leetcode.strings;
 
-public class Reverse_Integer {
+public class S0007 {
     public static void main(String[] args) {
         System.out.println(reverse(123));
     }

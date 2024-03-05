@@ -1,6 +1,8 @@
 package homework.leetcode;
 
 public class S1672 {
+    // https://leetcode.com/problems/richest-customer-wealth/description/
+
     public static void main(String[] args) {
         int[][] accounts = new int[][]{{1,2,3}, {3,2,1}};
         System.out.println(maximumWealth(accounts));

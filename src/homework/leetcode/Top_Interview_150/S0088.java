@@ -2,7 +2,9 @@ package homework.leetcode.Top_Interview_150;
 
 import java.util.Arrays;
 
-public class MergeSortedArray_88 {
+public class S0088 {
+    // https://leetcode.com/problems/merge-sorted-array/description/
+
     public static void main(String[] args) {
         int[] nums1 = {1,2,3,0,0,0};
         int[] nums2 = {2,5,6};
