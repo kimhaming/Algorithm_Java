@@ -9,7 +9,6 @@ public class S0485 {
         // Output -> 2
     }
 
-
     public static int findMaxConsecutiveOnes(int[] nums) {
         // 결론적으로 리턴할 정답 (문제에서 바라는 결과값)
         int max = 0;
