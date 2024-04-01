@@ -19,7 +19,7 @@ class Solution {
                     }
                     startRow++;
                     index++;
-                    break;
+                    // break;
                 }
 
                 case 1: {   // 아래 방향
@@ -30,7 +30,7 @@ class Solution {
                     }
                     startCol--;
                     index++;
-                    break;
+                    // break;
                 }
 
                 case 2: {   // 왼쪽 방향
@@ -41,7 +41,7 @@ class Solution {
                     }
                     endRow--;
                     index++;
-                    break;
+                    // break;
                 }
 
                 case 3: {   // 위쪽 방향
@@ -52,7 +52,7 @@ class Solution {
                     }
                     endCol++;
                     index = 0;
-                    break;
+                    // break;
                 }
             }
         }
