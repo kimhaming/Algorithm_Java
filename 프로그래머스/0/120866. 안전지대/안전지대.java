@@ -2,30 +2,30 @@ import java.util.*;
 
 class Solution {
     public int solution(int[][] board) {
-         int safe = 0;
-
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
+        int n = board.length; 
+        int safe = n * n;
+        
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < n; j++) {
                 if (board[i][j] == 1) {
-                    for (int p = Math.max(0, i - 1); p <= Math.min(board.length - 1, i + 1); p++) {
-                        for (int q = Math.max(0, j - 1); q <= Math.min(board[i].length - 1, j + 1); q++) {
-                            if (!(p == i && q == j) && !(board[p][q] == 1)) {
+                    safe--;
+                    for (int p = i - 1; p <= i + 1; p++) {
+                        if (p < 0 || p >= n) {
+                                continue;
+                        }
+                        for (int q = j - 1; q <= j + 1; q++) {
+                            if (q < 0 || q >= n) {
+                                continue;
+                            }
+                            if (board[p][q] == 0) {
+                                safe--;
                                 board[p][q] = 2;
+                            }
                             }
                         }
                     }
-                }
+                }                
             }
-        }
-
-        for (int i = 0; i < board.length; i++) {
-            for (int j = 0; j < board[i].length; j++) {
-                if (board[i][j] == 0) {
-                    safe++;
-                }
-            }
-        }
-
         return safe;
+        }
     }
-}
