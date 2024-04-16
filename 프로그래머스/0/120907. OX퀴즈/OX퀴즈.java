@@ -1,25 +1,23 @@
+import java.util.Arrays;
+
 class Solution {
     public String[] solution(String[] quiz) {
-        String[] answer = new String[quiz.length];
-        // quiz 요소 순회하면서 문자열을 뜯어서 실제 연산 확인하기
-        // 첫번째 순회할 때 숫자와 부호 독립적으로 뽑아내서 정답인지 체크하고 결과를 result에 저장하는 것까지 해야된다
-        for (int i = 0; i < quiz.length; i++) {
-            String[] str = quiz[i].split(" ");
-            int firstNum = Integer.parseInt(str[0]);
-            int secondNum = Integer.parseInt(str[2]);
-            int thirdNum = Integer.parseInt(str[4]);
-            String operator = str[1];
+        return Arrays.stream(quiz).
+                map(i -> {
+            String[] str = i.split(" ");
+            int first = Integer.parseInt(str[0]);
+            int second = Integer.parseInt(str[2]);
+            int third = Integer.parseInt(str[4]);
 
-            boolean isCorrect = operator.equals("+") ?
-                    firstNum + secondNum == thirdNum :
-                    firstNum - secondNum == thirdNum;
+            boolean isCorrect = str[1].equals("+") ?
+                    first + second == third :
+                    first - second == third;
 
             if (isCorrect) {
-                answer[i] = "O";
+                return "O";
+            } else {
+                return "X";
             }
-            else answer[i] = "X";
-            }
-
-        return answer;
+        }).toArray(String[]::new);
     }
 }
