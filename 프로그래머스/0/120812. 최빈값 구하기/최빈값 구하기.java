@@ -2,6 +2,7 @@ import java.util.Arrays;
 
 class Solution {
     public int solution(int[] array) {
+        Arrays.sort(array);
 
         // 최빈값
         int mode = 0;
@@ -12,7 +13,7 @@ class Solution {
         int max = array[array.length - 1];
 
         // array의 요소 값마다 얼마나 출현하는지 카운트할 배열 생성
-        int[] count = new int[1000];
+        int[] count = new int[99];
 
         // 각 숫자의 개수 count 배열에 기록
         for (int i = 0; i < array.length; i++) {
