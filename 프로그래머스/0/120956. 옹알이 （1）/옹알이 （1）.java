@@ -1,20 +1,19 @@
+import java.util.regex.Pattern;
+
 class Solution {
+    
+        private static final String[] PATTERNS = {"aya", "ye", "woo", "ma"};   // final 상수 배열 생성
     public int solution(String[] babbling) {
-        String[] able_str = {"aya", "ye", "woo", "ma"};
-        int answer = 0;
-        
-        for (int i = 0; i < babbling.length; i++) {
-            for (int j = 0; j < able_str.length; j++) {
-                // 문자열 전체가 공백으로 대체되면 answer에 담아야하는 요소가 된다
-                babbling[i] = babbling[i].replace(able_str[j], " ");
-            }
-            
-            // 해당 요소의 공백을 모두 제거했을 때 길이가 0이라면 해당 문자열은 발음 가능한 문자열로만 구성되어있었다는 것 -> answer로 카운트
-            if (babbling[i].trim().length() == 0) {
-                answer++;
-            }
-        }
-        
-        return answer;
+        return (int) java.util.Arrays.stream(babbling)
+                .filter(Solution::isValidBabbling)   //  .filter(클래스명::메서드명)
+                .count();
+    }
+
+    // babbling 배열에 있는 각 문자열 요소를 매개변수 String word로 본다.
+    // isValidBabbling() 메서드: 각 문자열이 유효한지 검사하는 메서드
+    private static boolean isValidBabbling(String word) {
+        String pattern = String.join("|", PATTERNS);
+        String replacedWord = word.replaceAll(pattern, "");
+        return replacedWord.isEmpty() && Pattern.matches("((" + pattern + ")+)", word);
     }
 }
