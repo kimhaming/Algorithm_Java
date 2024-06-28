@@ -1,8 +1,8 @@
 import java.util.*;
+import java.util.Arrays;
 
 class Solution {
     public int[] solution(int[] arr, int divisor) {
-        
         int count = 0;
         int number = 0;
         
@@ -12,7 +12,7 @@ class Solution {
             }
         }
         
-        if(count == 0) {
+        if (count == 0) {
             int[] answer = {-1};
             return answer;
         }
@@ -27,7 +27,6 @@ class Solution {
         }
         
         Arrays.sort(answer);
-        
         return answer;
     }
 }
